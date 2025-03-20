@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Group Chat</title>
+    <link rel="stylesheet" href="chat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <h2 id="groupName">Study Group Chat</h2>
+            <div class="header-actions">
+                <button id="shareBtn"><i class="fas fa-share"></i> Share</button>
+                <button id="pomodoroBtn"><i class="fas fa-clock"></i> Timer</button>
+                <button id="whiteboardBtn"><i class="fas fa-chalkboard"></i> Whiteboard</button>
+                <button id="flashcardBtn"><i class="fas fa-book"></i> Flashcards</button>
+            </div>
+        </header>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-tools">
+            <div class="tasks">
+                <h3>Tasks</h3>
+                <ul id="taskList"></ul>
+                <input type="text" id="taskInput" placeholder="Add a task...">
+                <button id="addTask">Add</button>
+            </div>
+            <div class="resources">
+                <h3>Resources</h3>
+                <ul id="resourceList"></ul>
+            </div>
+        </div>
+        <form id="chatForm" class="chat-input">
+            <img id="chatAvatar" src="https://via.placeholder.com/40" alt="User Avatar" class="chat-avatar">
+            <input type="text" id="messageInput" placeholder="Type a message..." required>
+            <button type="button" id="speakBtn"><i class="fas fa-volume-up"></i></button>
+            <input type="file" id="fileInput" accept="image/*,.pdf,.txt" style="display: none;">
+            <button type="button" id="attachBtn"><i class="fas fa-paperclip"></i></button>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <div id="pomodoroModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h3>Pomodoro Timer</h3>
+            <div id="timerDisplay">25:00</div>
+            <button id="startTimer">Start</button>
+            <button id="resetTimer">Reset</button>
+        </div>
+    </div>
+
+    <div id="whiteboardModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h3>Whiteboard</h3>
+            <canvas id="whiteboardCanvas" width="600" height="400"></canvas>
+            <button id="clearWhiteboard">Clear</button>
+        </div>
+    </div>
+
+    <div id="flashcardModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h3>Flashcard Generator</h3>
+            <form id="flashcardForm">
+                <input type="text" id="termInput" placeholder="Term (e.g., Capital of France)" required>
+                <input type="text" id="definitionInput" placeholder="Definition (e.g., Paris)" required>
+                <button type="submit">Add Flashcard</button>
+            </form>
+            <div id="flashcardContainer" class="flashcard-container"></div>
+            <button id="nextFlashcard">Next</button>
+            <button id="shareFlashcard">Share to Chat</button>
+        </div>
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Group Finder</title>
+    <link rel="stylesheet" href="css2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Study Group Finder</h1>
+        <p>Connect. Collaborate. Excel!</p>
+        <div class="header-stats">
+            <span><i class="fas fa-users"></i> 150+ Active Groups</span>
+            <span><i class="fas fa-comments"></i> 500+ Messages Today</span>
+        </div>
+        <div class="theme-switcher">
+            <button id="themeToggle"><i class="fas fa-moon"></i> Theme</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="group-form">
+            <h2>Create Your Study Group</h2>
+            <form id="groupForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <select id="subject" required>
+                    <option value="">Select Subject</option>
+                    <option value="Math">Math</option>
+                    <option value="Science">Science</option>
+                    <option value="History">History</option>
+                    <option value="English">English</option>
+                    <option value="Programming">Programming</option>
+                </select>
+                <input type="text" id="interests" placeholder="Interests (e.g., Coding, Biology)" required>
+                <input type="text" id="description" placeholder="Group Description (e.g., Exam Prep)" required>
+                <select id="privacy" required>
+                    <option value="public">Public</option>
+                    <option value="private">Private (Password Protected)</option>
+                </select>
+                <input type="password" id="password" placeholder="Password (if private)" style="display: none;">
+                <button type="submit">Create Group</button>
+            </form>
+            <div class="avatar-section">
+                <h3>Your Avatar</h3>
+                <img id="userAvatar" src="https://via.placeholder.com/100" alt="User Avatar">
+                <input type="file" id="avatarInput" accept="image/*">
+            </div>
+        </section>
+
+        <section class="groups-list">
+            <h2>Explore Study Groups</h2>
+            <div class="filter-bar">
+                <input type="text" id="search" placeholder="Search groups...">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Advanced">Advanced</option>
+                    <option value="Exam Prep">Exam Prep</option>
+                </select>
+            </div>
+            <ul id="groupList"></ul>
+        </section>
+
+        <section class="activity-feed">
+            <h2>Community Activity</h2>
+            <ul id="activityList">
+                <li><i class="fas fa-user-plus"></i> Alex joined Programming Group</li>
+                <li><i class="fas fa-file-upload"></i> Sarah shared a resource in Science Group</li>
+                <li><i class="fas fa-comment"></i> Mike posted in Math Group</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Study Group Finder | <a href="#" id="feedbackLink">Suggest a Feature</a></p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h3>Share Your Feedback</h3>
+            <textarea id="feedbackText" placeholder="Your suggestions..."></textarea>
+            <button id="submitFeedback">Submit</button>
+        </div>
+    </div>
+
+    <!-- Landbot Chatbot Embed -->
+    <script src="https://static.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+    <script>
+        var myLandbot = new Landbot.Livechat({
+            configUrl: 'https://landbot.online/v3/H-2838973-C04LIQXI45XD0VUQ/index.json',
+        });
+    </script>
+
+    <script src="script2.js"></script>
+</body>
+</html>

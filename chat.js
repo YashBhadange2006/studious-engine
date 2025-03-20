@@ -81,7 +81,9 @@ speakBtn.addEventListener('click', function() {
 function addMessage(content, type) {
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('message', type);
-    messageDiv.innerHTML = `${content} <span class="pin-btn" onclick="pinMessage(this)">📌</span>`;
+    messageDiv.innerHTML = `${content} <span class="pin-btn" onclick="pinMessage
+
+(this)">📌</span>`;
     chatMessages.appendChild(messageDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
